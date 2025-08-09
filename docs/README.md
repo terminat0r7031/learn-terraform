@@ -22,17 +22,6 @@ Welcome to the comprehensive documentation for the learn-terraform infrastructur
   - Communication guidelines
   - Onboarding checklist and mentorship program
 
-- **[gitflow.md](gitflow.md)** - Complete GitFlow branching and release strategy
-  - Branch structure and purposes (main, develop, release, feature, hotfix)
-  - Production release process with release branches and tagging
-  - Emergency hotfix procedures
-  - Semantic versioning and tag management
-  - Branch protection rules and environment deployments
-  - Workflow examples and automation integration
-  - HashiCorp Terraform extension installation and configuration
-  - Optimal development environment settings
-  - Extension features and usage tips
-  - Troubleshooting common issues
 - **[vscode-setup.md](vscode-setup.md)** - VS Code development environment setup
   - HashiCorp Terraform extension installation and configuration
   - Optimal development environment settings
@@ -56,12 +45,10 @@ Welcome to the comprehensive documentation for the learn-terraform infrastructur
 
 ### For Contributors
 - **Development Workflow**: [team-processes.md](team-processes.md#-development-workflow)
-- **GitFlow Strategy**: [gitflow.md](gitflow.md) - Complete branching and release workflow
 - **Code Review Process**: [team-processes.md](team-processes.md#-code-review-process)
 - **Security Guidelines**: [team-processes.md](team-processes.md#-security--compliance)
 
 ### For Operations Team
-- **GitFlow Releases**: [gitflow.md](gitflow.md#-production-release-process) - Production deployment workflow
 - **Incident Response**: [team-processes.md](team-processes.md#-incident-response)
 - **Deployment Process**: [team-processes.md](team-processes.md#-deployment-process)
 - **Cost Management**: [team-processes.md](team-processes.md#-cost-management)
