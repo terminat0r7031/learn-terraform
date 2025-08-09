@@ -188,7 +188,7 @@
 
 ### Team Processes
 - [x] **Documentation**
-  - [x] Team processes document created (`TEAM_PROCESSES.md`)
+  - [x] Team processes document created (`docs/team-processes.md`)
   - [x] Development workflow guidelines
   - [x] Code review process documentation
   - [x] Incident response procedures
