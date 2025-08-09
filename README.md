@@ -208,11 +208,14 @@ Open VS Code settings (Cmd/Ctrl + ,) and search for "terraform" to configure:
 ## 🔄 Development Workflow
 
 ### Branch Strategy
-- `main`: Production-ready code
-- `develop`: Integration branch for development
+- `main`: Production-ready code (deployed to production)
+- `develop`: Integration branch for development (deployed to dev environment)
+- `release/*`: Release preparation branches (deployed to staging)
 - `feature/*`: Feature branches
-- `bugfix/*`: Bug fix branches
+- `bugfix/*`: Bug fix branches  
 - `hotfix/*`: Emergency fixes
+
+**GitFlow Process**: We follow a structured GitFlow methodology for production releases. See [GitFlow Documentation](docs/gitflow.md) for complete workflow details.
 
 ### Making Changes
 
@@ -321,6 +324,7 @@ Scopes: vpc, security, compute, storage, database, monitoring
 
 ### Available Documentation
 - **[VS Code Setup](docs/vscode-setup.md)**: Complete VS Code and HashiCorp Terraform extension setup guide
+- **[GitFlow Workflow](docs/gitflow.md)**: Comprehensive branching strategy and release management
 - **[Team Processes](docs/team-processes.md)**: Comprehensive team workflows and procedures
 - **[Requirements Checklist](docs/requirements.md)**: Complete project setup tracking
 - **[Architecture Docs](docs/)**: System architecture and design decisions
