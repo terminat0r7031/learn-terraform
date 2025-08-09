@@ -1,4 +1,17 @@
 # Infrastructure Change Request
+## 🏷️ PR Title Guidelines
+Use clear, descriptive titles that follow this format:
+
+`[type](scope): brief description`
+
+Examples:
+- `[feat](vpc): add multi-AZ VPC module with private subnets`
+- `[fix](security): update RDS security group rules`
+- `[docs](monitoring): add CloudWatch dashboard setup guide`
+- `[chore](deps): update AWS provider to v5.0`
+- `[refactor](modules): restructure EC2 module for reusability`
+- `[style](config): apply terraform fmt to all modules`
+
 
 ## 📋 Change Summary
 <!-- Provide a brief description of what this PR changes -->
