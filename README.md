@@ -38,14 +38,13 @@ This repository demonstrates advanced Terraform practices with:
 git clone https://github.com/terminat0r7031/learn-terraform.git
 cd learn-terraform
 
-# Choose your development approach
-# Option 1: Start with templates (recommended for new projects)
-cp -r templates/basic-setup/* .
+# Open in VS Code
+code .
 
-# Option 2: Use existing modules and environments
-cd environments/dev
-terraform init
-terraform plan -var-file="terraform.tfvars.example"
+# Install the HashiCorp Terraform extension
+# Go to Extensions (Ctrl+Shift+X) and search for "HashiCorp Terraform"
+# Or install via command line:
+code --install-extension hashicorp.terraform
 ```
 
 ## 🏗️ Project Structure
@@ -60,67 +59,106 @@ learn-terraform/
 │   ├── requirements.md        # Project setup requirements checklist
 │   ├── team-processes.md      # Team workflows and procedures
 │   └── runbooks/              # Operational procedures and troubleshooting
-├── environments/              # Environment-specific configurations
-│   ├── dev/                  # Development environment
-│   ├── staging/              # Staging environment
-│   └── prod/                 # Production environment
-├── modules/                   # Reusable Terraform modules
-│   ├── vpc/                  # VPC and networking
-│   ├── security/             # Security groups and IAM
-│   ├── compute/              # EC2 and compute resources
-│   ├── storage/              # S3 and storage solutions
-│   ├── database/             # RDS and database resources
-│   └── monitoring/           # CloudWatch and observability
 └── README.md                # This file
 ```
 
 ## 🔧 Prerequisites
 
 ### Required Tools
-- **Terraform**: Version ~1.0 or later
-- **AWS CLI**: For cloud provider authentication
+- **VS Code**: Visual Studio Code editor
+- **HashiCorp Terraform Extension**: For Terraform development support
+- **Terraform**: Version ~1.0 or later (for future development)
+- **AWS CLI**: For cloud provider authentication (when needed)
 - **Git**: For version control
-- **Pre-commit**: For local validation hooks (optional but recommended)
 
 ### Access Requirements
-- AWS account with appropriate IAM permissions
 - GitHub repository access
-- Terraform Cloud/Enterprise (optional, for remote state)
+- VS Code installed on your development machine
+- AWS account with appropriate IAM permissions (for future Terraform deployments)
+- Terraform Cloud/Enterprise (optional, for remote state when implementing infrastructure)
 
 ### Installation
 
-#### macOS (using Homebrew)
+#### 1. Install VS Code and HashiCorp Terraform Extension
+
+**macOS:**
 ```bash
-# Install Terraform
+# Install VS Code using Homebrew
+brew install --cask visual-studio-code
+
+# Open VS Code and install Terraform extension
+code --install-extension hashicorp.terraform
+
+# Or install Terraform CLI for future use
 brew install terraform
-
-# Install AWS CLI
-brew install awscli
-
-# Install pre-commit (optional)
-brew install pre-commit
 ```
 
-#### Windows (using Chocolatey)
+**Windows:**
 ```powershell
-# Install Terraform
+# Install VS Code using Chocolatey
+choco install vscode
+
+# Install Terraform extension
+code --install-extension hashicorp.terraform
+
+# Or install Terraform CLI for future use
 choco install terraform
-
-# Install AWS CLI
-choco install awscli
-
-# Install Git
-choco install git
 ```
 
-#### Ubuntu/Debian
+**Ubuntu/Debian:**
 ```bash
-# Install Terraform
+# Install VS Code
+sudo snap install code --classic
+
+# Install Terraform extension
+code --install-extension hashicorp.terraform
+
+# Or install Terraform CLI for future use
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update && sudo apt install terraform
+```
 
-# Install AWS CLI
+#### 2. VS Code Extension Configuration
+
+After installing the HashiCorp Terraform extension, you can configure it for optimal development experience:
+
+**Extension Features:**
+- ✅ Terraform syntax highlighting
+- ✅ IntelliSense and autocomplete
+- ✅ Format on save
+- ✅ Terraform validation
+- ✅ Resource documentation on hover
+- ✅ Go to definition/references
+- ✅ Terraform plan preview
+
+**Recommended VS Code Settings:**
+```json
+{
+  "terraform.experimentalFeatures.validateOnSave": true,
+  "terraform.experimentalFeatures.prefillRequiredFields": true,
+  "editor.formatOnSave": true,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  }
+}
+```
+
+#### 3. Optional Tools for Future Development
+
+```bash
+# Install AWS CLI (when ready for cloud deployments)
+# macOS
+brew install awscli
+
+# Windows
+choco install awscli
+
+# Ubuntu/Debian
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
@@ -128,52 +166,44 @@ sudo ./aws/install
 
 ## ⚡ Getting Started
 
-### 1. Environment Setup
+### 1. Development Environment Setup
 
 ```bash
-# Configure AWS credentials
-aws configure
+# Clone the repository
+git clone https://github.com/terminat0r7031/learn-terraform.git
+cd learn-terraform
 
-# Or use environment variables
-export AWS_ACCESS_KEY_ID="your-access-key"
-export AWS_SECRET_ACCESS_KEY="your-secret-key"
-export AWS_DEFAULT_REGION="us-west-2"
+# Open in VS Code
+code .
 ```
 
-### 2. Initialize Development Environment
+### 2. Install HashiCorp Terraform Extension
 
+**Method 1: Through VS Code UI**
+1. Open VS Code
+2. Go to Extensions (Ctrl+Shift+X or Cmd+Shift+X)
+3. Search for "HashiCorp Terraform"
+4. Click "Install" on the official HashiCorp Terraform extension
+
+**Method 2: Command Line**
 ```bash
-# Navigate to development environment
-cd environments/dev
-
-# Copy example variables
-cp terraform.tfvars.example terraform.tfvars
-
-# Edit variables for your environment
-vim terraform.tfvars
-
-# Initialize Terraform
-terraform init
-
-# Review planned changes
-terraform plan
-
-# Apply changes (after review)
-terraform apply
+# Install the extension via command line
+code --install-extension hashicorp.terraform
 ```
 
-### 3. Validate Setup
+### 3. Verify Extension Installation
 
-```bash
-# Format code
-terraform fmt -recursive
+1. Create a test file: `test.tf`
+2. Type `resource "aws_instance" "example"` and verify syntax highlighting
+3. Check that IntelliSense provides autocomplete suggestions
+4. Verify the Terraform language server is running (bottom status bar)
 
-# Validate configuration
-terraform validate
+### 4. Configure Extension Settings (Optional)
 
-# Run security scan (if Checkov installed)
-checkov -d . --framework terraform
-```
+Open VS Code settings (Cmd/Ctrl + ,) and search for "terraform" to configure:
+- Enable format on save
+- Enable validation on save
+- Configure Terraform CLI path (if custom installation)
 
 ## 🔄 Development Workflow
 
@@ -190,19 +220,21 @@ checkov -d . --framework terraform
    ```bash
    git checkout develop
    git pull origin develop
-   git checkout -b feature/JIRA-123-add-vpc-module
+   git checkout -b feature/JIRA-123-add-documentation
    ```
 
 2. **Make Changes**
    - Follow [Terraform best practices](https://www.terraform.io/docs/cloud/guides/recommended-practices/index.html)
    - Update documentation
-   - Add appropriate tests
+   - Use VS Code with HashiCorp Terraform extension for syntax highlighting and validation
 
-3. **Local Validation**
+3. **Local Validation** (when working with Terraform files)
    ```bash
+   # Format code (when Terraform files exist)
    terraform fmt -recursive
+   
+   # Validate configuration (when Terraform files exist)
    terraform validate
-   terraform plan
    ```
 
 4. **Create Pull Request**
@@ -288,6 +320,7 @@ Scopes: vpc, security, compute, storage, database, monitoring
 ## 📚 Documentation
 
 ### Available Documentation
+- **[VS Code Setup](docs/vscode-setup.md)**: Complete VS Code and HashiCorp Terraform extension setup guide
 - **[Team Processes](docs/team-processes.md)**: Comprehensive team workflows and procedures
 - **[Requirements Checklist](docs/requirements.md)**: Complete project setup tracking
 - **[Architecture Docs](docs/)**: System architecture and design decisions
@@ -304,9 +337,9 @@ Each module includes:
 ## 👥 Contributing
 
 ### Getting Started
-1. Read the [Team Processes](docs/team-processes.md) documentation
-2. Complete the onboarding checklist
-3. Set up your development environment
+1. Follow the [VS Code Setup Guide](docs/vscode-setup.md) to configure your development environment
+2. Read the [Team Processes](docs/team-processes.md) documentation
+3. Complete the onboarding checklist
 4. Make your first contribution (documentation update)
 
 ### Contribution Guidelines
@@ -345,11 +378,12 @@ Each module includes:
 
 ### Current State
 - ✅ **GitHub Templates**: Comprehensive PR and issue templates
-- ✅ **CI/CD Pipeline**: Automated validation and security scanning
+- ✅ **CI/CD Pipeline**: Automated validation and security scanning workflows
 - ✅ **Documentation**: Team processes and guidelines
-- ✅ **Security**: Automated scanning and compliance checks
-- ⏳ **Infrastructure Modules**: In development
-- ⏳ **Environment Setup**: Templates available
+- ✅ **VS Code Setup**: HashiCorp Terraform extension documentation
+- ✅ **Security**: Automated scanning and compliance checks ready for future Terraform code
+- ⏳ **Infrastructure Modules**: Ready for development when needed
+- ⏳ **Environment Setup**: Structure prepared for multi-environment deployments
 
 ### Roadmap
 - **Q4 2025**: Complete core infrastructure modules
