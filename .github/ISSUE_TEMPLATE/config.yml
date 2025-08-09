@@ -1,8 +1,11 @@
 blank_issues_enabled: false
 contact_links:
   - name: 📚 Documentation
-    url: https://github.com/terminat0r7031/learn-terraform/wiki
+    url: https://github.com/terminat0r7031/learn-terraform/tree/main/docs
     about: Check our documentation for common questions and guides
+  - name: 👥 Team Processes
+    url: https://github.com/terminat0r7031/learn-terraform/blob/main/docs/team-processes.md
+    about: Review team workflows and development procedures
   - name: 💬 Discussions
     url: https://github.com/terminat0r7031/learn-terraform/discussions
     about: Ask questions and discuss infrastructure topics with the team

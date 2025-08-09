@@ -56,6 +56,10 @@ learn-terraform/
 │   ├── ISSUE_TEMPLATE/        # Issue templates for bugs, features, incidents
 │   ├── workflows/             # CI/CD automation workflows
 │   └── pull_request_template.md
+├── docs/                      # Project documentation
+│   ├── requirements.md        # Project setup requirements checklist
+│   ├── team-processes.md      # Team workflows and procedures
+│   └── runbooks/              # Operational procedures and troubleshooting
 ├── environments/              # Environment-specific configurations
 │   ├── dev/                  # Development environment
 │   ├── staging/              # Staging environment
@@ -67,9 +71,6 @@ learn-terraform/
 │   ├── storage/              # S3 and storage solutions
 │   ├── database/             # RDS and database resources
 │   └── monitoring/           # CloudWatch and observability
-├── docs/                     # Additional documentation
-├── TEAM_PROCESSES.md         # Team workflows and procedures
-├── requirements.md           # Project setup requirements checklist
 └── README.md                # This file
 ```
 
@@ -287,8 +288,8 @@ Scopes: vpc, security, compute, storage, database, monitoring
 ## 📚 Documentation
 
 ### Available Documentation
-- **[Team Processes](TEAM_PROCESSES.md)**: Comprehensive team workflows and procedures
-- **[Requirements Checklist](requirements.md)**: Complete project setup tracking
+- **[Team Processes](docs/team-processes.md)**: Comprehensive team workflows and procedures
+- **[Requirements Checklist](docs/requirements.md)**: Complete project setup tracking
 - **[Architecture Docs](docs/)**: System architecture and design decisions
 - **[Runbooks](docs/runbooks/)**: Operational procedures and troubleshooting
 
@@ -303,7 +304,7 @@ Each module includes:
 ## 👥 Contributing
 
 ### Getting Started
-1. Read the [Team Processes](TEAM_PROCESSES.md) documentation
+1. Read the [Team Processes](docs/team-processes.md) documentation
 2. Complete the onboarding checklist
 3. Set up your development environment
 4. Make your first contribution (documentation update)
