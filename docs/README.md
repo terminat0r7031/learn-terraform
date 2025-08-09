@@ -22,6 +22,13 @@ Welcome to the comprehensive documentation for the learn-terraform infrastructur
   - Communication guidelines
   - Onboarding checklist and mentorship program
 
+- **[vscode-setup.md](vscode-setup.md)** - VS Code development environment setup
+  - HashiCorp Terraform extension installation and configuration
+  - Optimal development environment settings
+  - Extension features and usage tips
+  - Troubleshooting common issues
+  - Verification checklist
+
 ### Additional Resources
 - **[runbooks/](runbooks/)** - Operational procedures and troubleshooting guides *(Coming Soon)*
 - **[architecture/](architecture/)** - System architecture and design decisions *(Coming Soon)*
@@ -30,10 +37,11 @@ Welcome to the comprehensive documentation for the learn-terraform infrastructur
 ## 🎯 Quick Navigation
 
 ### For New Team Members
-1. Start with **[team-processes.md](team-processes.md)** - Section: Onboarding Checklist
-2. Review the **[requirements.md](requirements.md)** to understand project setup
-3. Follow the development workflow guidelines
-4. Complete your first contribution
+1. Start with **[vscode-setup.md](vscode-setup.md)** - Set up your development environment
+2. Review **[team-processes.md](team-processes.md)** - Section: Onboarding Checklist
+3. Check the **[requirements.md](requirements.md)** to understand project setup
+4. Follow the development workflow guidelines
+5. Complete your first contribution
 
 ### For Contributors
 - **Development Workflow**: [team-processes.md](team-processes.md#-development-workflow)

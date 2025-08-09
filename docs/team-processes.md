@@ -279,13 +279,15 @@ Development → Staging → Production
 ### New Team Member Setup
 #### Week 1: Foundation
 - [ ] GitHub access granted
-- [ ] AWS console access configured
-- [ ] Terraform CLI installed and configured
-- [ ] Development environment setup
+- [ ] VS Code installed
+- [ ] HashiCorp Terraform extension installed and configured
+- [ ] Development environment setup (repository cloned)
 - [ ] Team channels joined
 - [ ] Security training completed
+- [ ] AWS console access configured (for future deployments)
 
 #### Week 2: Process Training
+- [ ] VS Code Terraform extension features walkthrough
 - [ ] PR template training
 - [ ] Code review process walkthrough
 - [ ] Incident response simulation
@@ -295,12 +297,12 @@ Development → Staging → Production
 #### Week 3: Hands-on Practice
 - [ ] Shadow senior team member
 - [ ] Complete first PR (documentation update)
+- [ ] Practice with Terraform syntax highlighting and validation
 - [ ] Participate in code reviews
-- [ ] Practice deployment process
 - [ ] Complete security assessment
 
 #### Week 4: Full Integration
-- [ ] Lead first infrastructure change
+- [ ] Lead first infrastructure documentation change
 - [ ] Participate in incident response
 - [ ] Present to team on completed work
 - [ ] Feedback session with manager
